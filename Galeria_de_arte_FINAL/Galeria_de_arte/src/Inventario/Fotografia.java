@@ -1,14 +1,16 @@
 package Inventario;
 
 public class Fotografia extends Pieza {
-    private String tipoCamara;  // Tipo de cámara utilizada para la fotografía
+    public Fotografia(String titulo, Autor autor, int anioCreacion, String lugarCreacion, int tiempoGaleria,
+			int tiempoMaximo, String codigoPieza, boolean exhibida) {
+		super(titulo, autor, anioCreacion, lugarCreacion, tiempoGaleria, tiempoMaximo, codigoPieza, exhibida);
+
+	}
+
+	private String tipoCamara;  // Tipo de cámara utilizada para la fotografía
     private String formato;     // Formato de la imagen (digital, film, etc.)
 
-    public Fotografia(String titulo, String autor, int anioCreacion, String lugarCreacion, int tiempoGaleria, int tiempoMaximo, String tipoCamara, String formato) {
-        super(titulo, autor, anioCreacion, lugarCreacion, tiempoGaleria, tiempoMaximo);
-        this.tipoCamara = tipoCamara;
-        this.formato = formato;
-    }
+  
 
     public String getTipoCamara() {
         return tipoCamara;

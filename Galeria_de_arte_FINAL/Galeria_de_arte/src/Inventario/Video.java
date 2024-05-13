@@ -2,12 +2,17 @@
 package Inventario;
 
 public class Video extends Pieza {
-    private int duracion;  // Duración del video en minutos
+	
+    public Video(String titulo, Autor autor, int anioCreacion, String lugarCreacion, int tiempoGaleria,
+			int tiempoMaximo, String codigoPieza, boolean exhibida) {
+		super(titulo, autor, anioCreacion, lugarCreacion, tiempoGaleria, tiempoMaximo, codigoPieza, exhibida);
 
-    public Video(String titulo, String autor, int anioCreacion, String lugarCreacion, int tiempoGaleria, int tiempoMaximo, int duracion) {
-        super(titulo, autor, anioCreacion, lugarCreacion, tiempoGaleria, tiempoMaximo);
-        this.duracion = duracion;
-    }
+	}
+
+	private int duracion;  // Duración del video en minutos
+
+
+    
 
     public int getDuracion() {
         return duracion;

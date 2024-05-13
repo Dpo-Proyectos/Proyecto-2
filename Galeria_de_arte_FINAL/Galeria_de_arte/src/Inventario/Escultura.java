@@ -1,14 +1,17 @@
 package Inventario;
 
 public class Escultura extends Pieza {
-    private double peso;  // Peso de la escultura en kilogramos
+    public Escultura(String titulo, Autor autor, int anioCreacion, String lugarCreacion, int tiempoGaleria,
+			int tiempoMaximo, String codigoPieza, boolean exhibida) {
+		super(titulo, autor, anioCreacion, lugarCreacion, tiempoGaleria, tiempoMaximo, codigoPieza, exhibida);
+		// TODO Auto-generated constructor stub
+	}
+
+	private double peso;  // Peso de la escultura en kilogramos
     private String material;  // Material de la escultura
 
-    public Escultura(String titulo, String autor, int anioCreacion, String lugarCreacion, int tiempoGaleria, int tiempoMaximo, double peso, String material) {
-        super(titulo, autor, anioCreacion, lugarCreacion, tiempoGaleria, tiempoMaximo);
-        this.peso = peso;
-        this.material = material;
-    }
+
+    
 
     public double getPeso() {
         return peso;

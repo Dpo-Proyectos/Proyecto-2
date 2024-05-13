@@ -1,14 +1,16 @@
 package Inventario;
 
 public class impresion extends Pieza {
-    private String tecnicaImpresion;  // Técnica de impresión utilizada
+    public impresion(String titulo, Autor autor, int anioCreacion, String lugarCreacion, int tiempoGaleria,
+			int tiempoMaximo, String codigoPieza, boolean exhibida) {
+		super(titulo, autor, anioCreacion, lugarCreacion, tiempoGaleria, tiempoMaximo, codigoPieza, exhibida);
+
+	}
+
+	private String tecnicaImpresion;  // Técnica de impresión utilizada
     private String tamaño;            // Tamaño de la impresión
 
-    public impresion(String titulo, String autor, int anioCreacion, String lugarCreacion, int tiempoGaleria, int tiempoMaximo, String tecnicaImpresion, String tamaño) {
-        super(titulo, autor, anioCreacion, lugarCreacion, tiempoGaleria, tiempoMaximo);
-        this.tecnicaImpresion = tecnicaImpresion;
-        this.tamaño = tamaño;
-    }
+    
 
     public String getTecnicaImpresion() {
         return tecnicaImpresion;

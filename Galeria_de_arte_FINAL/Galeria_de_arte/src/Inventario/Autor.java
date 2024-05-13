@@ -1,9 +1,16 @@
 package Inventario;
 
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.UUID;
+
 public class Autor {
     private String nombre;
     private boolean esColectivo;
     private boolean esAnonimo;
+    private ArrayList<UUID> piezasHechas;
+    private ArrayList<Date> fechasVendidas;
+    private ArrayList<Integer> preciosVendidos;
 
     // Constructor para autor conocido individual o colectivo
     public Autor(String nombre, boolean esColectivo) {
@@ -40,6 +47,30 @@ public class Autor {
     public boolean esAnonimo() {
         return esAnonimo;
     }
+
+	public ArrayList<UUID> getPiezasHechas() {
+		return piezasHechas;
+	}
+
+	public void addPiezaHecha(UUID pieza) {
+		this.piezasHechas.add(pieza);
+	}
+
+	public ArrayList<Date> getFechasVendidas() {
+		return fechasVendidas;
+	}
+
+	public void addFechasVendidas(Date fecha) {
+		this.fechasVendidas.add(fecha);
+	}
+
+	public ArrayList<Integer> getPreciosVendidos() {
+		return preciosVendidos;
+	}
+
+	public void setPreciosVendidos(int precio) {
+		this.preciosVendidos.add(precio);
+	}
 
     // No hay necesidad de un setter para esAnonimo ya que está determinado por el estado del nombre
 }

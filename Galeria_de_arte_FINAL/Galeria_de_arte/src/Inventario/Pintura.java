@@ -1,12 +1,15 @@
 package Inventario;
 
 public class Pintura extends Pieza {
-    private String tipoPintura;
+    public Pintura(String titulo, Autor autor, int anioCreacion, String lugarCreacion, int tiempoGaleria,
+			int tiempoMaximo, String codigoPieza, boolean exhibida) {
+		super(titulo, autor, anioCreacion, lugarCreacion, tiempoGaleria, tiempoMaximo, codigoPieza, exhibida);
 
-    public Pintura(String titulo, String autor, int anioCreacion, String lugarCreacion, int tiempoGaleria, int tiempoMaximo, String tipoPintura) {
-        super(titulo, autor, anioCreacion, lugarCreacion, tiempoGaleria, tiempoMaximo);
-        this.tipoPintura = tipoPintura;
-    }
+	}
+
+	private String tipoPintura;
+
+    
 
     // Métodos getters y setters para tipoPintura
     public String getTipoPintura() {
