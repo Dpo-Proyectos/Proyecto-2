@@ -2,6 +2,7 @@ package Compras_Subastas;
 
 import Inventario.Pieza;
 import Transacciones.Efectivo;
+import Transacciones.MetodoPago;
 import Transacciones.TarjetaCredito;
 import Transacciones.TransferenciaElectronica;
 
@@ -11,10 +12,10 @@ import java.util.UUID;
 import Exceptions.ClienteNoTienePieza;
 import Exceptions.PiezaYaEntregada;
 
-import java.util.ArrayList;
+
 import java.util.HashMap;
 
-public class Cliente {
+public class Cliente extends Usuario{
 	
     private UUID codigoCliente;
     private TarjetaCredito tarjetaCredito;
@@ -24,6 +25,7 @@ public class Cliente {
 
     // Constructor
     public Cliente(String usuario, String contraseña, TarjetaCredito tarjetaCredito, Efectivo efectivo, TransferenciaElectronica transferenciaElectronica) {
+    	super(usuario, contraseña);
         this.codigoCliente = UUID.randomUUID();
         this.piezasPropias = new HashMap<UUID, Pieza>();
         this.tarjetaCredito = tarjetaCredito;
@@ -54,24 +56,9 @@ public class Cliente {
 			throw new ClienteNoTienePieza();
 		}
 	}
-
-
-    
-    public void entregarPiezaExhibicion(Pieza pieza) {
-     
-    }
-
-    public void entregarPiezaVenta(Pieza pieza, int precio) {
-      
-    }
-
-    public void entregarPiezaSubasta(Pieza pieza, int precioMinimo) {
-        // Lógica para entregar una pieza para subasta
-    }
-
-    // Métodos para realizar ofertas
-    public void realizarOfertaVenta(MetodoPago metodoPago) {
-     
+    public void realizarOfertaVenta(MetodoPago metodoPago, int cantidad) {
+    	
+    	
     }
 
     public void realizarOfertaSubasta() {
@@ -80,20 +67,17 @@ public class Cliente {
 
 
 
-    public void setContrasena(String contrasena) {
-        this.contrasena = contrasena;
-    }
 
     public UUID getCodigoCliente() {
         return this.codigoCliente;
     }
 
-    public void setCodigoCliente(String codigoCliente) {
+    public void setCodigoCliente(UUID codigoCliente) {
         this.codigoCliente = codigoCliente;
     }
 
     public List<Pieza> getPiezasPropias() {
-        return new ArrayList<>(piezasPropias);
+        return this.getPiezasPropias();
     }
 
     public void agregarPiezaPropia(Pieza pieza) {

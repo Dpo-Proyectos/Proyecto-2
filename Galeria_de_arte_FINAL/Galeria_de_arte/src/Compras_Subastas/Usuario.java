@@ -2,6 +2,7 @@ package Compras_Subastas;
 
 import Exceptions.UsuarioOContrasenaIncorrecta;
 
+
 public class Usuario {
     private String usuario;
     private String contrasena;
@@ -32,6 +33,7 @@ public class Usuario {
 	public void cambiarContrasena(String contrasena) {
 		this.contrasena = contrasena;
 	}
+
 	
 	
 }
